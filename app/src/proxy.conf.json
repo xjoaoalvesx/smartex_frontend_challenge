@@ -1,0 +1,9 @@
+{
+    "/api/**": {
+        "target": "https://uk.api.just-eat.io/restaurants/bypostcode",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": { "^/api": "" },
+        "logLevel": "debug"
+    }
+}
