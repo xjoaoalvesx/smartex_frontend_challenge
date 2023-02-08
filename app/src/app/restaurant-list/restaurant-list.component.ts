@@ -6,16 +6,28 @@ import { IRestaurant } from '../shared/interfaces';
 @Component({
   selector: 'app-restaurant-list',
   template: `
-    <p>
-      {{postcode}}
-    </p>
-    <ul>
-      <li *ngFor="let restaurant of restaurants">
-          {{ restaurant.Name }} {{ restaurant.Rating.Average }}
-      </li>
-    </ul>
+    <mat-card id="highlight-postcode">
+      <mat-card-content> <h1> PostCode </h1> {{ postcode }} </mat-card-content>
+    </mat-card>
+    <div id="rlist-container">
+      <mat-accordion>
+        <mat-expansion-panel hideToggle *ngFor="let restaurant of restaurants">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{restaurant.Name}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{restaurant.Rating.Average}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p *ngFor="let cuisine of restaurant.Cuisines"> {{cuisine.Name}}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
   `,
   styles: [
+    '#rlist-container    { width: 50%; margin: auto}',
+    '#highlight-postcode { width: 50%; margin: 20px auto 10px}'
   ]
 })
 export class RestaurantListComponent implements OnInit {
@@ -35,8 +47,8 @@ export class RestaurantListComponent implements OnInit {
         this.service
           .getRestaurants(this.postcode)
           .subscribe(res => {
-            this.restaurants = res
-            console.log(this.restaurants)
+            this.restaurants = res.filter( (r: IRestaurant) => r.IsOpenNow)
+            //console.log(this.restaurants)
           })
       }
     }
