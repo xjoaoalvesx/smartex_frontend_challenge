@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { RestaurantsService } from '../services/restaurants.service';
 import { IRestaurant } from '../shared/interfaces';
-import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -19,7 +19,7 @@ import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
     </mat-card>
     <mat-card id="restaurants-header">
       <mat-card-content> 
-        <h2> Currently Open Restaurants {{restaurants.length}} </h2>
+        <h2>Currently Open Restaurants {{restaurants.length}}</h2>
       </mat-card-content>
     </mat-card>
     <div id="rlist-container">
