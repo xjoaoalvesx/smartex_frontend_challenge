@@ -4,9 +4,10 @@ This challenge provides a simple look at getting started with Angular to call in
 
 ## Run the Application Locally
 
-> Keep in mind that Angular CLI is required to run the application
+> Keep in mind that Node/NPM and Angular CLI are required to run the application
 
 * Go into the /app folder
+* Run `npm i` to install project dependencies
 * Run `ng serve` to compile and start the application
 * Browse to http://localhost:4200 (4200 should be the default port)
 
