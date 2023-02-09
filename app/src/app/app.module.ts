@@ -8,6 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,13 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    ScrollingModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
