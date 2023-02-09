@@ -24,7 +24,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     </mat-card>
     <div id="rlist-container">
       <cdk-virtual-scroll-viewport itemSize="20" id="viewport">
-        <mat-accordion color="primary" multi>
+        <mat-accordion multi>
           <mat-expansion-panel hideToggle *cdkVirtualFor="let restaurant of restaurants; templateCacheSize: 0">
             <mat-expansion-panel-header>
               <mat-panel-title>
